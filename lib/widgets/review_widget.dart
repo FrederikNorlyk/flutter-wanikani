@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
 import 'package:flutter_wanikani/service/kanji_service.dart';
 
@@ -47,26 +45,11 @@ class _ReviewWidgetState extends State<ReviewWidget> {
               child: Column( 
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      _isShowingAnswer ? _item.primaryMeaning : _item.kanji,
-                      style: const TextStyle(
-                        fontSize: 100,
-                        color: Colors.black
-                      )
-                    )
-                  ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      _isShowingAnswer ? _item.alternativeMeanings.join(", ") : "",
-                      style: const TextStyle(
-                        fontSize: 60,
-                        color: Colors.black
-                      ),
-                    )
-                  )
+                  _getTextRow(_isShowingAnswer ? _item.primaryMeaning : _item.kanji, 100),
+                  _getTextRow(_isShowingAnswer ? _item.alternativeMeanings ?? "" : "", 60),
+                  _getTextRow(_isShowingAnswer ? _item.onYomiReadings ?? "" : "", 40),
+                  _getTextRow(_isShowingAnswer ? _item.kunYomiReadings ?? "" : "", 40),
+                  _getTextRow(_isShowingAnswer ? _item.nanoriReadings ?? "" : "", 40),
                 ]
               )
             )
@@ -82,6 +65,19 @@ class _ReviewWidgetState extends State<ReviewWidget> {
             )
           )
         ]
+      )
+    );
+  }
+
+  Align _getTextRow(String text, double? fontSize) {
+    return Align(
+      alignment: Alignment.center,
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: fontSize,
+          color: Colors.black
+        )
       )
     );
   }
