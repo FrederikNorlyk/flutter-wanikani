@@ -1,0 +1,1320 @@
+{
+    "data": [
+      [
+        {
+          "characters": "化",
+          "meanings": [
+            {
+              "meaning": "Change",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "か",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "ば",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "地",
+          "meanings": [
+            {
+              "meaning": "Earth",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Ground",
+              "primary": false,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Land",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ち",
+              "accepted_answer": true
+            },
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "じ",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "両",
+          "meanings": [
+            {
+              "meaning": "Both",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "りょう",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "全",
+          "meanings": [
+            {
+              "meaning": "All",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Whole",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ぜん",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "すべ",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "まった",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "向",
+          "meanings": [
+            {
+              "meaning": "Yonder",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Facing",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "こう",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "む",
+              "accepted_answer": false
+            },
+            {
+              "type": "nanori",
+              "primary": false,
+              "reading": "なた",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "安",
+          "meanings": [
+            {
+              "meaning": "Relax",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Cheap",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "あん",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "やす",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "州",
+          "meanings": [
+            {
+              "meaning": "State",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Province",
+              "primary": false,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "County",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "しゅう",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "曲",
+          "meanings": [
+            {
+              "meaning": "Music",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Bend",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "きょく",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "ま",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "有",
+          "meanings": [
+            {
+              "meaning": "Have",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ゆう",
+              "accepted_answer": true
+            },
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "う",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "あ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "次",
+          "meanings": [
+            {
+              "meaning": "Next",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "じ",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "つぎ",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "つ",
+              "accepted_answer": false
+            },
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "し",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "死",
+          "meanings": [
+            {
+              "meaning": "Death",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "し",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "し",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "羊",
+          "meanings": [
+            {
+              "meaning": "Sheep",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "よう",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "ひつじ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "血",
+          "meanings": [
+            {
+              "meaning": "Blood",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "けつ",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "ち",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "京",
+          "meanings": [
+            {
+              "meaning": "Capital",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "きょう",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "みやこ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "国",
+          "meanings": [
+            {
+              "meaning": "Country",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "こく",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "くに",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "夜",
+          "meanings": [
+            {
+              "meaning": "Night",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Evening",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "や",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "よ",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "よる",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "妹",
+          "meanings": [
+            {
+              "meaning": "Younger Sister",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Little Sister",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "まい",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "いもうと",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "姉",
+          "meanings": [
+            {
+              "meaning": "Older Sister",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Big Sister",
+              "primary": false,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Elder Sister",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "し",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "お",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "あね",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "ねえ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "店",
+          "meanings": [
+            {
+              "meaning": "Shop",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Store",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "てん",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "みせ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "明",
+          "meanings": [
+            {
+              "meaning": "Bright",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "めい",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "あ",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "あか",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "あき",
+              "accepted_answer": false
+            },
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "みょう",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "東",
+          "meanings": [
+            {
+              "meaning": "East",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "とう",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "ひがし",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "歩",
+          "meanings": [
+            {
+              "meaning": "Walk",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ほ",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "ある",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "あゆ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "画",
+          "meanings": [
+            {
+              "meaning": "Drawing",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Picture",
+              "primary": false,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Painting",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "が",
+              "accepted_answer": true
+            },
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "かく",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "直",
+          "meanings": [
+            {
+              "meaning": "Fix",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Direct",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ちょく",
+              "accepted_answer": true
+            },
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "じき",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "なお",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "知",
+          "meanings": [
+            {
+              "meaning": "Know",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ち",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "し",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "長",
+          "meanings": [
+            {
+              "meaning": "Long",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Leader",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ちょう",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "なが",
+              "accepted_answer": false
+            },
+            {
+              "type": "nanori",
+              "primary": false,
+              "reading": "は",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "前",
+          "meanings": [
+            {
+              "meaning": "Front",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Before",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ぜん",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "まえ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "南",
+          "meanings": [
+            {
+              "meaning": "South",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "なん",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "みなみ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "室",
+          "meanings": [
+            {
+              "meaning": "Room",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "しつ",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "後",
+          "meanings": [
+            {
+              "meaning": "Behind",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "After",
+              "primary": false,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Back",
+              "primary": false,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Later",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ご",
+              "accepted_answer": true
+            },
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "こう",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "うし",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "あと",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "のち",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "思",
+          "meanings": [
+            {
+              "meaning": "Think",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Thought",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": false,
+              "reading": "し",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": true,
+              "reading": "おも",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "星",
+          "meanings": [
+            {
+              "meaning": "Star",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "せい",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "ほし",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "活",
+          "meanings": [
+            {
+              "meaning": "Lively",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "かつ",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "い",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "海",
+          "meanings": [
+            {
+              "meaning": "Sea",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Ocean",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "かい",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "うみ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "点",
+          "meanings": [
+            {
+              "meaning": "Point",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "てん",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "つ",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "科",
+          "meanings": [
+            {
+              "meaning": "Science",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Course",
+              "primary": false,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Department",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "か",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "茶",
+          "meanings": [
+            {
+              "meaning": "Tea",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ちゃ",
+              "accepted_answer": true
+            },
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "さ",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "食",
+          "meanings": [
+            {
+              "meaning": "Eat",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Meal",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "しょく",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "た",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "く",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "首",
+          "meanings": [
+            {
+              "meaning": "Neck",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": false,
+              "reading": "しゅ",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": true,
+              "reading": "くび",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "亡",
+          "meanings": [
+            {
+              "meaning": "Death",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Deceased",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "ぼう",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "な",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "私",
+          "meanings": [
+            {
+              "meaning": "I",
+              "primary": true,
+              "accepted_answer": true
+            },
+            {
+              "meaning": "Private",
+              "primary": false,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": true,
+              "reading": "し",
+              "accepted_answer": true
+            },
+            {
+              "type": "kunyomi",
+              "primary": false,
+              "reading": "わたし",
+              "accepted_answer": false
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "characters": "取",
+          "meanings": [
+            {
+              "meaning": "Take",
+              "primary": true,
+              "accepted_answer": true
+            }
+          ],
+          "readings": [
+            {
+              "type": "onyomi",
+              "primary": false,
+              "reading": "しゅ",
+              "accepted_answer": false
+            },
+            {
+              "type": "kunyomi",
+              "primary": true,
+              "reading": "と",
+              "accepted_answer": true
+            }
+          ]
+        }
+      ]
+    ]
+  }

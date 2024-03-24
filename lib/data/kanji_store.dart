@@ -6,7 +6,7 @@ import 'package:flutter_wanikani/model/kanji_item.dart';
 class KanjiStore {
   
   static Future<List<KanjiItem>> getItemsFor(int level) async {
-    final String json = await rootBundle.loadString('assets/levels/level_$level.json');
+    final String json = await rootBundle.loadString('assets/levels/$level.json');
     
     Map<String, dynamic> decoded = jsonDecode(json);
     List<KanjiItem> items = [];
