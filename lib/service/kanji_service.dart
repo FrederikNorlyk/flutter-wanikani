@@ -4,8 +4,10 @@ import 'package:flutter_wanikani/model/kanji_item.dart';
 class KanjiService {
   late final List<KanjiItem> _items;
 
-  KanjiService(int level) {
-    _items = KanjiStore.getItemsFor(level);
+  static Future<KanjiService> initialize(int level) async {
+    var service = KanjiService();
+    service._items = await KanjiStore.getItemsFor(level);
+    return service;
   }
 
   KanjiItem? getNextItem() {

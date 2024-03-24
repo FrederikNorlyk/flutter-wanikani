@@ -12,23 +12,38 @@ class ReviewWidget extends StatefulWidget {
   final int level;
 
   @override
-  State<ReviewWidget> createState() => _ReviewWidgetState(this);
+  State<ReviewWidget> createState() => _ReviewWidgetState();
 }
 
 class _ReviewWidgetState extends State<ReviewWidget> {
 
-  late final KanjiService _kanjiService;
+  KanjiService? _kanjiService;
   bool _isShowingAnswer = false;
   late KanjiItem _item;
 
-  _ReviewWidgetState(ReviewWidget widget) {
-    _kanjiService = KanjiService(widget.level);
-    _item = _kanjiService.getNextItem()!;
+  @override
+  initState() {
+    super.initState();
+
+    KanjiService.initialize(widget.level).then((KanjiService value) {
+      setState(() {
+        _kanjiService = value;
+        _item = _kanjiService!.getNextItem()!;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     
+    if (_kanjiService == null) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text("Loading..."),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(title: const Text('Select a level'), centerTitle: true),
       body: Column(
@@ -85,7 +100,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
   void _nextButtonPressed(BuildContext context) {
     setState(() {
       if (_isShowingAnswer) {
-        var item = _kanjiService.getNextItem();
+        var item = _kanjiService?.getNextItem();
 
         if (item == null) {
           Navigator.of(context).pop();

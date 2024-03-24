@@ -1,23 +1,12 @@
 import 'dart:convert';
 
-import 'package:flutter_wanikani/data/level_1.dart';
-import 'package:flutter_wanikani/data/level_2.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
 
 class KanjiStore {
   
-  static List<KanjiItem> getItemsFor(int level) {
-    String json;
-    switch (level) {
-      case 1:
-        json = Level1.data;
-        break;
-      case 2:
-        json = Level2.data;
-        break;
-      default:
-        throw UnsupportedError("Invalid level: $level");
-    }
+  static Future<List<KanjiItem>> getItemsFor(int level) async {
+    final String json = await rootBundle.loadString('assets/levels/level_$level.json');
     
     Map<String, dynamic> decoded = jsonDecode(json);
     List<KanjiItem> items = [];
