@@ -1,12 +1,21 @@
+import 'package:flutter_wanikani/model/reading.dart';
+
 class KanjiItem {
   final String _kanji;
   final String _primaryMeaning;
-  late final String? _alternativeMeanings;
-  late final String? _onYomiReadings;
-  late final String? _kunYomiReadings;
-  late final String? _nanoriReadings;
+  late final List<String> _alternativeMeanings;
+  late final List<Reading> _onYomiReadings;
+  late final List<Reading> _kunYomiReadings;
+  late final List<Reading> _nanoriReadings;
 
-  KanjiItem(this._kanji, this._primaryMeaning, {String? alternative, String? onYomi, String? kunYomi, String? nanori}) {
+  KanjiItem(
+    this._kanji, 
+    this._primaryMeaning, {
+    required List<String> alternative, 
+    required List<Reading> onYomi, 
+    required List<Reading> kunYomi, 
+    required List<Reading> nanori
+  }) {
     _alternativeMeanings = alternative;
     _onYomiReadings = onYomi;
     _kunYomiReadings = kunYomi;
@@ -21,19 +30,19 @@ class KanjiItem {
     return _primaryMeaning;
   }
 
-  String? get alternativeMeanings {
+  List<String> get alternativeMeanings {
     return _alternativeMeanings;
   }
 
-  String? get onYomiReadings {
+  List<Reading> get onYomiReadings {
     return _onYomiReadings;
   }
 
-  String? get kunYomiReadings {
+  List<Reading> get kunYomiReadings {
     return _kunYomiReadings;
   }
 
-  String? get nanoriReadings {
+  List<Reading> get nanoriReadings {
     return _nanoriReadings;
   }
 }

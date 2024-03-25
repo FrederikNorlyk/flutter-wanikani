@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
 import 'package:flutter_wanikani/service/kanji_service.dart';
+import 'package:flutter_wanikani/widgets/answer_widget.dart';
+import 'package:flutter_wanikani/widgets/question_widget.dart';
 
 class ReviewWidget extends StatefulWidget {
 
@@ -45,29 +47,13 @@ class _ReviewWidgetState extends State<ReviewWidget> {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Select a level'), centerTitle: true),
+      appBar: AppBar(title: Text('Level ${widget.level}'), centerTitle: true),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            flex: 1,
-            child: Container(color: Colors.white),
-          ),
-          Expanded(
             flex: 9,
-            child: Container(
-              color: Colors.white,
-              child: Column( 
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  _getTextRow(_isShowingAnswer ? _item.primaryMeaning : _item.kanji, 100),
-                  _getTextRow(_isShowingAnswer ? _item.alternativeMeanings ?? "" : "", 60),
-                  _getTextRow(_isShowingAnswer ? _item.onYomiReadings ?? "" : "", 40),
-                  _getTextRow(_isShowingAnswer ? _item.kunYomiReadings ?? "" : "", 40),
-                  _getTextRow(_isShowingAnswer ? _item.nanoriReadings ?? "" : "", 40),
-                ]
-              )
-            )
+            child: _isShowingAnswer ? AnswerWidget(item: _item) : QuestionWidget(item: _item)
           ),
           Expanded(
             flex: 2,
@@ -80,19 +66,6 @@ class _ReviewWidgetState extends State<ReviewWidget> {
             )
           )
         ]
-      )
-    );
-  }
-
-  Align _getTextRow(String text, double? fontSize) {
-    return Align(
-      alignment: Alignment.center,
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: fontSize,
-          color: Colors.black
-        )
       )
     );
   }

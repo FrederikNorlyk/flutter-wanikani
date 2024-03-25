@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
+import 'package:flutter_wanikani/model/reading.dart';
 
 class KanjiStore {
   
@@ -30,14 +31,18 @@ class KanjiStore {
       }
 
       List<dynamic> readings = entry['readings'];
-      List<String> onYomiReadings = [];
-      List<String> kunYomiReadings = [];
-      List<String> nanoriReadings = [];
+      List<Reading> onYomiReadings = [];
+      List<Reading> kunYomiReadings = [];
+      List<Reading> nanoriReadings = [];
 
       for (var readingEntry in readings) {
-        String type = readingEntry['type'];
-        String reading = readingEntry['reading'];
+        var reading = Reading(
+          readingEntry['reading'],
+          isPrimary: readingEntry['primary']
+        );
 
+        String type = readingEntry['type'];
+        
         switch (type) {
           case "onyomi":
             onYomiReadings.add(reading);
@@ -53,10 +58,10 @@ class KanjiStore {
       items.add(KanjiItem(
         kanji, 
         primaryMeaning, 
-        alternative: alternativeMeanings.join(", "), 
-        onYomi: onYomiReadings.join(", "),
-        kunYomi: kunYomiReadings.join(", "),
-        nanori: nanoriReadings.join(", ")
+        alternative: alternativeMeanings, 
+        onYomi: onYomiReadings,
+        kunYomi: kunYomiReadings,
+        nanori: nanoriReadings
       ));
     }
 
