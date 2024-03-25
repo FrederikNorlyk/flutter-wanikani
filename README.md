@@ -1,6 +1,8 @@
-# flutter_wanikani
+# WaniKani Kanji Pratice
+Review tool for all Japanse kanji characters taught by the [WaniKani](http://www.wanikani.com) course.
 
-A new Flutter project.
+## Where does the data come from?
+The data for each level has been extracted using the [WaniKani API](https://docs.api.wanikani.com). The response was then trimmed using [JMESPath](https://jmespath.org) to only include the necessary fields. These are then stored as json files which are read and parsed by the app.
 
-## Progress
-I extract the levels using the WaniKani API. I then use JMESPath to trim the response to only include the necessary fields. This JSON is then stored and used as the data for the application.
+## Try it out 🚀
+The project is hosted on Vercel here: [flutter-wanikani.vercel.app](https://flutter-wanikani.vercel.app)
