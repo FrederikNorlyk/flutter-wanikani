@@ -45,7 +45,7 @@ class _AnswerWidgetState extends State<AnswerWidget> {
         text,
         style: TextStyle(
           fontSize: 30,
-          color: isPrimary ? Colors.black45 : Colors.black
+          color: isPrimary ? Colors.black : Colors.black45
         )
       )
     );
