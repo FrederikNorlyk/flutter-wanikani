@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'WaniKani Kanji Review',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: const Color(0xFF3CaBFF),
-          secondary: const Color(0xFFFF00AA),
+          primary: const Color(0xFFFF00AA),
+          secondary: const Color(0xFF3CaBFF),
           background: const Color(0XFFe8e8e8),
           surface: const Color(0XFFf4f4f4)
         ),
@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
       home: SafeArea(
         child: AnnotatedRegion(
           value: SystemUiOverlayStyle(
-            statusBarColor: Theme.of(context).colorScheme.surface
+            statusBarColor: Theme.of(context).colorScheme.surface,
+            statusBarBrightness: Brightness.light
           ),
           child: const LevelSelectorWidget()
         )

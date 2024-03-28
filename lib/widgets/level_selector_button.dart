@@ -12,26 +12,23 @@ class LevelSelectorButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => ReviewWidget(level: _level)),
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.secondary,
-            // border: Border.all(
-            //   width: 8,
-            // ),
+
+    return FilledButton(
+      onPressed: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ReviewWidget(level: _level)),
+      ),
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(6),
-          ),
-          child: Center(
-            child: Text(
-              _level.toString().padLeft(2, "0"),
-              style: const TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          ),
-        ),
-      );
+          )
+        )
+      ),
+      child: Text(
+        _level.toString().padLeft(2, "0"),
+        style: const TextStyle(color: Colors.white, fontSize: 20),
+      )
+    );
   }
 }
