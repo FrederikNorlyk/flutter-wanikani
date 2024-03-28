@@ -11,7 +11,7 @@ class LevelSelectorWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Select a level'), centerTitle: true),
       body: Padding(
-        padding: const EdgeInsets.all(10), 
+        padding: const EdgeInsets.only(top: 0, left: 10, bottom: 0, right: 10), 
         child: CustomScrollView(
           slivers: _buildLevelGroups(context),
         )
@@ -41,6 +41,8 @@ class LevelSelectorWidget extends StatelessWidget {
       level += 10;
     }
 
+    widgets.add(_buildBottomSpacing());
+
     return widgets;
   }
 
@@ -65,6 +67,15 @@ class LevelSelectorWidget extends StatelessWidget {
         maxCrossAxisExtent: 100,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10
+      )
+    );
+  }
+
+  SliverList _buildBottomSpacing() {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        childCount: 1,
+        (context, index) => const SizedBox(height: 40)
       )
     );
   }
