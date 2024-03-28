@@ -12,10 +12,8 @@ class LevelSelectorWidget extends StatelessWidget {
       appBar: AppBar(title: const Text('Select a level'), centerTitle: true),
       body: Padding(
         padding: const EdgeInsets.all(10), 
-        child: Flex(
-          direction: Axis.vertical,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: _buildLevelGroups(context),
+        child: CustomScrollView(
+          slivers: _buildLevelGroups(context),
         )
       )
     );
@@ -37,7 +35,16 @@ class LevelSelectorWidget extends StatelessWidget {
     var level = 1;
 
     for (var group in groups) {
-      widgets.add(Text(group));
+
+      // Label
+      widgets.add(SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (context, index) => Text(group), 
+          childCount: 1
+        )
+      ));
+
+      // Buttons
       widgets.add(_buildLevelButtons(context, level));
 
       level += 10;
@@ -48,37 +55,32 @@ class LevelSelectorWidget extends StatelessWidget {
 
   Widget _buildLevelButtons(BuildContext context, int startLevel) {
 
-    List<Widget> children = [];
-
-    for (var i = startLevel; i <= startLevel + 9; i++) {
-      children.add(
-        Expanded(
-          child: Padding(
+    return SliverGrid(
+        delegate: SliverChildBuilderDelegate(
+          (context, index) => Padding(
             padding: const EdgeInsets.all(5),
             child: GestureDetector(
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ReviewWidget(level: i)),
+                MaterialPageRoute(builder: (context) => ReviewWidget(level: startLevel + index)),
               ),
               child: Container(
                 height: 50,
                 color: Colors.blueGrey,
                 child: Center(
                   child: Text(
-                    i.toString(),
+                    (startLevel + index).toString(),
                     style: const TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
               ),
             )
           ),
-        ),
+          childCount: 10
+        ), 
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 100
+        )
       );
-    }
-
-    return Flex(
-      direction: Axis.horizontal,
-      children: children,
-    );
   }
 }
