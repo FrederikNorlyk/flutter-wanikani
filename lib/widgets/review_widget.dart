@@ -53,10 +53,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(
-              flex: 9,
-              child: _isShowingAnswer ? AnswerWidget(item: _item) : QuestionWidget(item: _item)
-            ),
+            Expanded(child: _isShowingAnswer ? AnswerWidget(item: _item) : QuestionWidget(item: _item)),
             SizedBox(
               height: 150, 
               child: TextButton(
@@ -64,7 +61,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                 style: TextButton.styleFrom(
                   textStyle: const TextStyle(fontSize: 40),
                   backgroundColor: Theme.of(context).colorScheme.secondary,
-                  foregroundColor: Colors.white,
+                  foregroundColor: Theme.of(context).colorScheme.onSecondary,
                   shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                 ),
                 child: const Text('Next'),

@@ -54,7 +54,7 @@ class _AnswerWidgetState extends State<AnswerWidget> {
         style: TextStyle(
           fontSize: fontSize,
           fontWeight: fontWeight,
-          color: Colors.black
+          color: Theme.of(context).colorScheme.onBackground
         )
     );
   }
