@@ -42,7 +42,6 @@ class AnswerWidget extends StatelessWidget {
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 30,
-        fontWeight: FontWeight.bold,
         color: isPrimaryReading ? null : Colors.black45
       )
     );
