@@ -15,16 +15,13 @@ class _QuestionWidgetState extends State<QuestionWidget> {
  
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Align(
-        alignment: Alignment.topCenter,
-        child: Text(
-          widget.item.kanji,
-          style: const TextStyle(
-            fontSize: 60,
-            fontWeight: FontWeight.bold,
-          )
+    return Align(
+      alignment: Alignment.topCenter,
+      child: Text(
+        widget.item.kanji,
+        style: const TextStyle(
+          fontSize: 60,
+          fontWeight: FontWeight.bold,
         )
       )
     );

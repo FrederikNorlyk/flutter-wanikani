@@ -48,24 +48,30 @@ class _ReviewWidgetState extends State<ReviewWidget> {
 
     return Scaffold(
       appBar: AppBar(title: Text('Level ${widget.level}'), centerTitle: true),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            flex: 9,
-            child: _isShowingAnswer ? AnswerWidget(item: _item) : QuestionWidget(item: _item)
-          ),
-          Expanded(
-            flex: 2,
-            child: TextButton(
-              onPressed: () => _nextButtonPressed(context), 
-              style: TextButton.styleFrom(
-                textStyle: const TextStyle(fontSize: 40),
-              ),
-              child: const Text('Next'),
+      body: Container(
+        color: Colors.white, 
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              flex: 9,
+              child: _isShowingAnswer ? AnswerWidget(item: _item) : QuestionWidget(item: _item)
+            ),
+            SizedBox(
+              height: 150, 
+              child: TextButton(
+                onPressed: () => _nextButtonPressed(context), 
+                style: TextButton.styleFrom(
+                  textStyle: const TextStyle(fontSize: 40),
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
+                  foregroundColor: Colors.white,
+                  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                ),
+                child: const Text('Next'),
+              )
             )
-          )
-        ]
+          ]
+        )
       )
     );
   }
