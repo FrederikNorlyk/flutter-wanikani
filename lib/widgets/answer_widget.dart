@@ -20,7 +20,7 @@ class _AnswerWidgetState extends State<AnswerWidget> {
       child: Column( 
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _getTextRow(widget.item.kanji, 60),
+          _getTextRow(widget.item.kanji, 60, fontWeight: FontWeight.bold),
           _getTextRow(widget.item.primaryMeaning, 40),
           _getTextRow(widget.item.alternativeMeanings.join(", "), 30),
           _getReadingWidget(widget.item.onYomiReadings),
@@ -45,19 +45,21 @@ class _AnswerWidgetState extends State<AnswerWidget> {
         text,
         style: TextStyle(
           fontSize: 30,
-          color: isPrimary ? Colors.black : Colors.black45
+          fontWeight: FontWeight.bold,
+          color: isPrimary ? Theme.of(context).colorScheme.onBackground : Colors.black45
         )
       )
     );
   }
 
-  Align _getTextRow(String text, double? fontSize) {
+  Align _getTextRow(String text, double? fontSize, {FontWeight fontWeight = FontWeight.normal}) {
     return Align(
       alignment: Alignment.center,
       child: Text(
         text,
         style: TextStyle(
           fontSize: fontSize,
+          fontWeight: fontWeight,
           color: Colors.black
         )
       )

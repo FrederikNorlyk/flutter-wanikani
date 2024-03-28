@@ -12,6 +12,7 @@ class QuestionWidget extends StatefulWidget {
 }
 
 class _QuestionWidgetState extends State<QuestionWidget> {
+ 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +23,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
           widget.item.kanji,
           style: const TextStyle(
             fontSize: 60,
-            color: Colors.black
+            fontWeight: FontWeight.bold,
           )
         )
       )
