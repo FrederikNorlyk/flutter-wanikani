@@ -35,34 +35,37 @@ class LevelSelectorWidget extends StatelessWidget {
     var level = 1;
 
     for (var group in groups) {
-
-      // Label
-      widgets.add(SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) => index == 0 
-            ? const SizedBox(height: 10) 
-            : Text(group),
-          childCount: 2
-        ),
-      ));
-
-      final int startLevel = level;
-      // Buttons
-      widgets.add(SliverGrid(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) => LevelSelectorButton(level: startLevel + index),
-          childCount: 10
-        ), 
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 100,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10
-        )
-      ));
+      widgets.add(_buildLabel(group));
+      widgets.add(_buildButtonGrid(level));
 
       level += 10;
     }
 
     return widgets;
+  }
+
+  SliverList _buildLabel(String group) {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) => index == 0 
+          ? const SizedBox(height: 10) 
+          : Text(group),
+        childCount: 2
+      ),
+    );
+  }
+
+  SliverGrid _buildButtonGrid(int startLevel) {
+    return SliverGrid(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) => LevelSelectorButton(level: startLevel + index),
+        childCount: 10
+      ), 
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 100,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10
+      )
+    );
   }
 }
