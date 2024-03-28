@@ -39,9 +39,11 @@ class LevelSelectorWidget extends StatelessWidget {
       // Label
       widgets.add(SliverList(
         delegate: SliverChildBuilderDelegate(
-          (context, index) => Text(group), 
-          childCount: 1
-        )
+          (context, index) => index == 0 
+            ? const SizedBox(height: 10) 
+            : Text(group),
+          childCount: 2
+        ),
       ));
 
       final int startLevel = level;
