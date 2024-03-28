@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_wanikani/widgets/review_widget.dart';
+import 'package:flutter_wanikani/widgets/level_selector_button.dart';
 
 class LevelSelectorWidget extends StatelessWidget {
 
@@ -44,43 +44,23 @@ class LevelSelectorWidget extends StatelessWidget {
         )
       ));
 
+      final int startLevel = level;
       // Buttons
-      widgets.add(_buildLevelButtons(context, level));
+      widgets.add(SliverGrid(
+        delegate: SliverChildBuilderDelegate(
+          (context, index) => LevelSelectorButton(level: startLevel + index),
+          childCount: 10
+        ), 
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 100,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10
+        )
+      ));
 
       level += 10;
     }
 
     return widgets;
-  }
-
-  Widget _buildLevelButtons(BuildContext context, int startLevel) {
-
-    return SliverGrid(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) => Padding(
-            padding: const EdgeInsets.all(5),
-            child: GestureDetector(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ReviewWidget(level: startLevel + index)),
-              ),
-              child: Container(
-                height: 50,
-                color: Colors.blueGrey,
-                child: Center(
-                  child: Text(
-                    (startLevel + index).toString(),
-                    style: const TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                ),
-              ),
-            )
-          ),
-          childCount: 10
-        ), 
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 100
-        )
-      );
   }
 }
