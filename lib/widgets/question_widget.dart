@@ -14,7 +14,6 @@ class QuestionWidget extends StatelessWidget {
       textAlign: TextAlign.center,
       style: const TextStyle(
         fontSize: 60,
-        fontWeight: FontWeight.bold,
       )
     );
   }

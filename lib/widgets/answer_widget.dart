@@ -13,7 +13,7 @@ class AnswerWidget extends StatelessWidget {
     return Column( 
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _getTextRow(_item.kanji, fontSize: 60, fontWeight: FontWeight.bold),
+        _getTextRow(_item.kanji, fontSize: 60),
         _getTextRow(_item.primaryMeaning, fontSize: 40),
         _getTextRow(_item.alternativeMeanings.join(", "), fontSize: 30),
         _getReadingWidget(_item.onYomiReadings),
@@ -23,13 +23,12 @@ class AnswerWidget extends StatelessWidget {
     );
   }
 
-  Text _getTextRow(String text, {double? fontSize, FontWeight fontWeight = FontWeight.normal}) {
+  Text _getTextRow(String text, {double? fontSize}) {
     return Text(
         text,
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: fontSize,
-          fontWeight: fontWeight,
+          fontSize: fontSize
         )
     );
   }
