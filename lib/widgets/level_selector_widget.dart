@@ -21,9 +21,9 @@ class LevelSelectorWidget extends StatelessWidget {
 
   List<Widget> _buildLevelGroups(BuildContext context) {
 
-    List<Widget> widgets = [];
+    final List<Widget> widgets = [];
 
-    var groups = [
+    final List<String> groups = [
       "快 PLEASANT",
       "苦 PAINFUL",
       "死 DEATH",
@@ -47,19 +47,19 @@ class LevelSelectorWidget extends StatelessWidget {
   SliverList _buildLabel(String group) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
+        childCount: 2,
         (context, index) => index == 0 
           ? const SizedBox(height: 10) 
-          : Text(group),
-        childCount: 2
-      ),
+          : Text(group)
+      )
     );
   }
 
   SliverGrid _buildButtonGrid(int startLevel) {
     return SliverGrid(
       delegate: SliverChildBuilderDelegate(
-        (context, index) => LevelSelectorButton(level: startLevel + index),
-        childCount: 10
+        childCount: 10,
+        (context, index) => LevelSelectorButton(level: startLevel + index)
       ), 
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 100,

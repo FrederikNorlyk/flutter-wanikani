@@ -2,39 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
 import 'package:flutter_wanikani/model/reading.dart';
 
-class AnswerWidget extends StatefulWidget {
+class AnswerWidget extends StatelessWidget {
 
-  final KanjiItem item;
+  final KanjiItem _item;
 
-  const AnswerWidget({super.key, required this.item});
+  const AnswerWidget({super.key, required KanjiItem item}) : _item = item;
 
-  @override
-  State<StatefulWidget> createState() => _AnswerWidgetState();
-}
-
-class _AnswerWidgetState extends State<AnswerWidget> {
   @override
   Widget build(BuildContext context) {
     return Column( 
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _getTextRow(widget.item.kanji, 60, fontWeight: FontWeight.bold),
-        _getTextRow(widget.item.primaryMeaning, 40),
-        _getTextRow(widget.item.alternativeMeanings.join(", "), 30),
-        _getReadingWidget(widget.item.onYomiReadings),
-        _getReadingWidget(widget.item.kunYomiReadings),
-        _getReadingWidget(widget.item.nanoriReadings),
+        _getTextRow(_item.kanji, fontSize: 60, fontWeight: FontWeight.bold),
+        _getTextRow(_item.primaryMeaning, fontSize: 40),
+        _getTextRow(_item.alternativeMeanings.join(", "), fontSize: 30),
+        _getReadingWidget(_item.onYomiReadings),
+        _getReadingWidget(_item.kunYomiReadings),
+        _getReadingWidget(_item.nanoriReadings),
       ]
     );
   }
 
+  Text _getTextRow(String text, {double? fontSize, FontWeight fontWeight = FontWeight.normal}) {
+    return Text(
+        text,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+        )
+    );
+  }
+
   Text _getReadingWidget(List<Reading> readings) {
-    var text = "";
-    var isPrimary = false;
-    if (readings.isNotEmpty) {
-      text = readings.map((e) => e.text).join(", ");
-      isPrimary = readings[0].isPrimary;
-    }
+    final bool isPrimaryReading = readings.any((reading) => reading.isPrimary);
+    final String text = readings.map((reading) => reading.text).join(", ");
 
     return Text(
       text,
@@ -42,20 +44,8 @@ class _AnswerWidgetState extends State<AnswerWidget> {
       style: TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.bold,
-        color: isPrimary ? Theme.of(context).colorScheme.onBackground : Colors.black45
+        color: isPrimaryReading ? null : Colors.black45
       )
-    );
-  }
-
-  Text _getTextRow(String text, double? fontSize, {FontWeight fontWeight = FontWeight.normal}) {
-    return Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: fontSize,
-          fontWeight: fontWeight,
-          color: Theme.of(context).colorScheme.onBackground
-        )
     );
   }
 }

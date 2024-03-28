@@ -1,28 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
 
-class QuestionWidget extends StatefulWidget {
+class QuestionWidget extends StatelessWidget {
 
-  final KanjiItem item;
+  final KanjiItem _item;
 
-  const QuestionWidget({super.key, required this.item});
+  const QuestionWidget({super.key, required KanjiItem item}) : _item = item;
 
-  @override
-  State<StatefulWidget> createState() => _QuestionWidgetState();
-}
-
-class _QuestionWidgetState extends State<QuestionWidget> {
- 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topCenter,
-      child: Text(
-        widget.item.kanji,
-        style: const TextStyle(
-          fontSize: 60,
-          fontWeight: FontWeight.bold,
-        )
+    return Text(
+      _item.kanji,
+      textAlign: TextAlign.center,
+      style: const TextStyle(
+        fontSize: 60,
+        fontWeight: FontWeight.bold,
       )
     );
   }
