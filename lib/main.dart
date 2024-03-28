@@ -32,13 +32,13 @@ class MyApp extends StatelessWidget {
         fontFamilyFallback: const ['NotoSansJP'],
         useMaterial3: true,
       ),
-      home: SafeArea(
+      home: const SafeArea(
         child: AnnotatedRegion(
           value: SystemUiOverlayStyle(
-            statusBarColor: Theme.of(context).colorScheme.surface,
-            statusBarBrightness: Brightness.light
+            statusBarColor: Color(0XFFf4f4f4),
+            statusBarBrightness: Brightness.light,
           ),
-          child: const LevelSelectorWidget()
+          child: LevelSelectorWidget()
         )
       ),
     );
