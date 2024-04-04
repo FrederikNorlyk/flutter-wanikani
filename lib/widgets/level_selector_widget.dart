@@ -23,6 +23,7 @@ class LevelSelectorWidget extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(top: 0, left: 10, bottom: 0, right: 10), 
         child: CustomScrollView(
+          clipBehavior: Clip.none,
           slivers: _buildLevelGroups(context),
         )
       )

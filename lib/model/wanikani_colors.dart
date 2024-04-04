@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 enum WaniKaniColors {
   gray,
   blue,
-  pink
+  pink,
+  red
 }
 
 extension WaniKaniColorsExtension on WaniKaniColors {
@@ -15,6 +16,8 @@ extension WaniKaniColorsExtension on WaniKaniColors {
         return const Color(0xFF3CaBFF);
       case WaniKaniColors.pink:
         return const Color(0xFFFF00AA);
+      case WaniKaniColors.red:
+        return const Color(0xFFff0033);
       default:
         return Colors.white;
     }
