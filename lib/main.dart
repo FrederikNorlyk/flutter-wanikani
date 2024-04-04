@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     const textColor = Color(0XFF333333);
 
     return ChangeNotifierProvider(
-      create: (context) => MyAppState(),
+      create: (context) => _createState(context),
       child: MaterialApp(
         title: 'WaniKani Kanji Review',
         theme: ThemeData(
@@ -45,9 +45,9 @@ class MyApp extends StatelessWidget {
           fontFamilyFallback: const ['NotoSansJP'],
           useMaterial3: true,
         ),
-        home: SafeArea(
+        home: const SafeArea(
           child: AnnotatedRegion(
-            value: const SystemUiOverlayStyle(
+            value: SystemUiOverlayStyle(
               statusBarColor: Color(0XFFf4f4f4),
               statusBarBrightness: Brightness.light,
             ),
@@ -56,6 +56,12 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  MyAppState _createState(BuildContext context) {
+    var state = MyAppState();
+    state.initialize();
+    return state;
   }
 }
 

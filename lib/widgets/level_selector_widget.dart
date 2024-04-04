@@ -1,22 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_wanikani/main.dart';
 import 'package:flutter_wanikani/widgets/level_selector_button.dart';
-import 'package:provider/provider.dart';
 
 class LevelSelectorWidget extends StatelessWidget {
 
-  LevelSelectorWidget({super.key});
-
-  var _didInitializeState = false;
+  const LevelSelectorWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    if (!_didInitializeState) {
-      final state = context.watch<MyAppState>();
-      state.initialize();
-      _didInitializeState = true;
-    }
 
     return Scaffold(
       appBar: AppBar(title: const Text('Select a level'), centerTitle: true),
