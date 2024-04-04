@@ -53,8 +53,8 @@ class _ReviewWidgetState extends State<ReviewWidget> {
       body: Container(
         color: Colors.white, 
         child: noMoreItems 
-          ? KanjiItemWidget(item: _item!, isShowingAnswer: _isShowingAnswer, nextButtonPressed: _nextButtonPressed)
-          : LevelCompletedWidget(level: widget._level) 
+          ? LevelCompletedWidget(level: widget._level) 
+          : KanjiItemWidget(item: _item!, isShowingAnswer: _isShowingAnswer, nextButtonPressed: _nextButtonPressed)
       )
     );
   }
