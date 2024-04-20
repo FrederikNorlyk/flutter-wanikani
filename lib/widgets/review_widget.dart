@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/main.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
+import 'package:flutter_wanikani/model/status.dart';
 import 'package:flutter_wanikani/service/kanji_service.dart';
 import 'package:provider/provider.dart';
 
@@ -32,7 +33,14 @@ class _ReviewWidgetState extends State<ReviewWidget> {
     if (_kanjiService == null) {
       final MyAppState state = context.watch<MyAppState>();
       final items = state.getItems(widget._level);
-      _kanjiService = KanjiService(items);
+      final pendingItems = items.where((element) => element.status != Status.burnt).toList();
+      
+      if (pendingItems.isNotEmpty) {
+        _kanjiService = KanjiService(pendingItems);
+      } else {
+        _kanjiService = KanjiService(items);
+      }
+      
       _item = _kanjiService!.getNextItem();
     }
 
