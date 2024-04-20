@@ -88,7 +88,7 @@ class LevelSelectorWidget extends StatelessWidget {
     return FilledButton(
       onPressed: () => showDialog(
         context: context,
-        builder: (context) => _getDialog(context)
+        builder: (context) => _getResetDialog(context)
       ),
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(WaniKaniColors.red.color),
@@ -97,10 +97,10 @@ class LevelSelectorWidget extends StatelessWidget {
     );
   }
 
-  AlertDialog _getDialog(BuildContext context) {
+  AlertDialog _getResetDialog(BuildContext context) {
     return AlertDialog(
-      title: const Text('Reset state'),
-      content: const Text('Are you sure?'),
+      title: const Text('Reset app'),
+      content: const Text('Are you sure? All progress will be lost.'),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context, 'Cancel'),
@@ -108,7 +108,7 @@ class LevelSelectorWidget extends StatelessWidget {
         ),
         TextButton(
           onPressed: () => _resetState(context),
-          child: const Text('OK'),
+          child: const Text('Reset'),
         ),
       ]
     );

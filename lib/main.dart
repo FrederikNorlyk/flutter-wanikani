@@ -126,6 +126,8 @@ class MyAppState extends ChangeNotifier {
 
   void _clearState(SharedPreferences preferences) {
     preferences.clear();
+    _levels.clear();
+    _initialize(preferences);
     notifyListeners();
   }
 }
