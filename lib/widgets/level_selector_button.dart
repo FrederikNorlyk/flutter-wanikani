@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/main.dart';
 import 'package:flutter_wanikani/model/status.dart';
+import 'package:flutter_wanikani/model/wanikani_colors.dart';
 import 'package:flutter_wanikani/widgets/review_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -19,16 +20,19 @@ class LevelSelectorButton extends StatelessWidget {
     final MyAppState state = context.watch<MyAppState>();
     final Status status = state.getLevelStatus(_level);
     
+    List<Widget> children = [_buildButton(context, status)];
+
+    if (status == Status.unseen) {
+      children.add(_buildUnseenStatus());
+    }
+
     return Stack(
       clipBehavior: Clip.none,
-      children: [
-        _buildButton(context),
-        _buildStatusBadge(status)
-      ]
+      children: children
     );
   }
 
-  SizedBox _buildButton(BuildContext context) {
+  SizedBox _buildButton(BuildContext context, Status status) {
     return SizedBox.expand(
       child: FilledButton(
         onPressed: () => Navigator.push(
@@ -36,6 +40,7 @@ class LevelSelectorButton extends StatelessWidget {
           MaterialPageRoute(builder: (context) => ReviewWidget(level: _level)),
         ),
         style: ButtonStyle(
+          backgroundColor: status == Status.burnt ? MaterialStateProperty.all(WaniKaniColors.gray.color) : null,
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(6),
@@ -50,7 +55,7 @@ class LevelSelectorButton extends StatelessWidget {
     );
   }
 
-  Widget _buildStatusBadge(Status status) {
+  Widget _buildUnseenStatus() {
     return Positioned(
       top: -4,
       right: -4,
@@ -59,7 +64,7 @@ class LevelSelectorButton extends StatelessWidget {
         height: 30,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: status.color,
+          color: WaniKaniColors.red.color,
           boxShadow: const [
             BoxShadow(
               color: Colors.black,
@@ -69,10 +74,10 @@ class LevelSelectorButton extends StatelessWidget {
             ),
           ]
         ),
-        child: Center(
+        child: const Center(
           child: Text(
-            status.kanji,
-            style: const TextStyle(
+            '新',
+            style: TextStyle(
               color: Colors.white,
               fontSize: 15
             ),
