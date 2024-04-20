@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/main.dart';
-import 'package:flutter_wanikani/model/level_status.dart';
+import 'package:flutter_wanikani/model/status.dart';
 import 'package:flutter_wanikani/widgets/review_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +17,7 @@ class LevelSelectorButton extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final MyAppState state = context.watch<MyAppState>();
-    final LevelStatus status = state.getLevelStatus(_level);
+    final Status status = state.getLevelStatus(_level);
     
     return Stack(
       clipBehavior: Clip.none,
@@ -50,7 +50,7 @@ class LevelSelectorButton extends StatelessWidget {
     );
   }
 
-  Widget _buildStatusBadge(LevelStatus status) {
+  Widget _buildStatusBadge(Status status) {
     return Positioned(
       top: -4,
       right: -4,

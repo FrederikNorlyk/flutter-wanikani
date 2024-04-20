@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/model/wanikani_colors.dart';
 
-enum LevelStatus {
+enum Status {
   unseen, seen, burnt
 }
 
-extension LevelStatusExtension on LevelStatus {
+extension LevelStatusExtension on Status {
   String get kanji {
     switch (this) {
-      case LevelStatus.unseen:
+      case Status.unseen:
         return '新';
-      case LevelStatus.seen:
+      case Status.seen:
         return '現';
-      case LevelStatus.burnt:
+      case Status.burnt:
         return '焦';
       default:
         return '';
@@ -21,11 +21,11 @@ extension LevelStatusExtension on LevelStatus {
 
   Color get color {
     switch (this) {
-      case LevelStatus.unseen:
+      case Status.unseen:
         return WaniKaniColors.red.color;
-      case LevelStatus.seen:
+      case Status.seen:
         return WaniKaniColors.blue.color;
-      case LevelStatus.burnt:
+      case Status.burnt:
         return WaniKaniColors.gray.color;
       default:
         return Colors.white;

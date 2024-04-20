@@ -1,3 +1,4 @@
+import 'package:flutter_wanikani/model/status.dart';
 import 'package:flutter_wanikani/model/reading.dart';
 
 class KanjiItem {
@@ -7,6 +8,7 @@ class KanjiItem {
   late final List<Reading> _onYomiReadings;
   late final List<Reading> _kunYomiReadings;
   late final List<Reading> _nanoriReadings;
+  Status status = Status.unseen;
 
   KanjiItem(
     this._kanji, 

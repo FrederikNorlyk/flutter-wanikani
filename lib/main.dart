@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_wanikani/model/level_status.dart';
+import 'package:flutter_wanikani/data/kanji_store.dart';
+import 'package:flutter_wanikani/model/kanji_item.dart';
+import 'package:flutter_wanikani/model/level.dart';
+import 'package:flutter_wanikani/model/status.dart';
 import 'package:flutter_wanikani/model/wanikani_colors.dart';
 import 'package:flutter_wanikani/widgets/level_selector_widget.dart';
 import 'package:provider/provider.dart';
@@ -66,36 +69,49 @@ class MyApp extends StatelessWidget {
 }
 
 class MyAppState extends ChangeNotifier {
-  final _levelStatuses = {};
+  final List<Level> _levels = [];
 
   void initialize() {
-    SharedPreferences.getInstance().then((preferences) => _initializeLevels(preferences));
+    SharedPreferences.getInstance().then((preferences) => _initialize(preferences));
   }
 
-  void _initializeLevels(SharedPreferences preferences) {
+  Future<void> _initialize(SharedPreferences preferences) async {
     for (var level = 1; level <= 60; level++) {
-        var statusName = preferences.getString('level_status_$level');
+      var items = await KanjiStore.getItemsFor(level);
+      
+      for (var item in items) {
+        var statusName = preferences.getString('kanji_status_${item.kanji}');
         
         if (statusName == null) {
           continue;
         }
-
-        LevelStatus status = LevelStatus.values.byName(statusName);
-        _levelStatuses[level] = status;
+        
+        item.status = Status.values.byName(statusName);
       }
 
-      notifyListeners();
+      _levels.add(Level(level, items));
+    }
+
+    notifyListeners();
   }
 
-  LevelStatus getLevelStatus(int level) {
-    return _levelStatuses[level] ?? LevelStatus.unseen;
+  List<KanjiItem> getItems(int levelNumber) {
+    var level = _levels.firstWhere((level) => level.level == levelNumber);
+    // Dereference the list
+    return [...level.kanjiItems];
   }
 
-  void setLevelStatus(int level, LevelStatus status) {
-    _levelStatuses[level] = status;
+  Status getLevelStatus(int levelNumber) {
+    var level = _levels.firstWhere((level) => level.level == levelNumber);
+    return level.status;
+  }
+
+  void setKanjiStatus(int levelNumber, KanjiItem item, Status status) {
+    var level = _levels.firstWhere((level) => level.level == levelNumber);
+    level.setKanjiItemStatus(item, status);
 
     SharedPreferences.getInstance()
-      .then((preferences) => preferences.setString('level_status_$level', status.name));
+      .then((preferences) => preferences.setString('kanji_status_${item.kanji}', status.name));
 
     notifyListeners();
   }

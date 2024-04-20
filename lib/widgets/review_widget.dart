@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wanikani/main.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
 import 'package:flutter_wanikani/service/kanji_service.dart';
-import 'package:flutter_wanikani/widgets/kanji_item_widget.dart';
-import 'package:flutter_wanikani/widgets/level_completed_widget.dart';
+import 'package:provider/provider.dart';
+
+import 'answer_widget.dart';
+import 'question_widget.dart';
 
 class ReviewWidget extends StatefulWidget {
+
+  final int _level;
 
   const ReviewWidget({
     super.key,
     required int level,
   }) : _level = level;
-
-  final int _level;
 
   @override
   State<ReviewWidget> createState() => _ReviewWidgetState();
@@ -24,37 +27,27 @@ class _ReviewWidgetState extends State<ReviewWidget> {
   KanjiItem? _item;
 
   @override
-  initState() {
-    super.initState();
-
-    KanjiService.initialize(widget._level).then((KanjiService kanjiService) {
-      setState(() {
-        _kanjiService = kanjiService;
-        _item = _kanjiService!.getNextItem()!;
-      });
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     
     if (_kanjiService == null) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text("Loading..."),
-        ),
-      );
+      final MyAppState state = context.watch<MyAppState>();
+      final items = state.getItems(widget._level);
+      _kanjiService = KanjiService(items);
+      _item = _kanjiService!.getNextItem();
     }
 
     var noMoreItems = _item == null;
+    if (noMoreItems) {
+      Navigator.of(context).pop();
+    }
 
     return Scaffold(
       appBar: AppBar(title: Text('Level ${widget._level}'), centerTitle: true),
       body: Container(
         color: Colors.white, 
-        child: noMoreItems 
-          ? LevelCompletedWidget(level: widget._level) 
-          : KanjiItemWidget(item: _item!, isShowingAnswer: _isShowingAnswer, nextButtonPressed: _nextButtonPressed)
+        child: _isShowingAnswer 
+          ? AnswerWidget(item: _item!, currentLevel: widget._level, nextButtonPressed: _nextButtonPressed) 
+          : QuestionWidget(item: _item!, nextButtonPressed: _nextButtonPressed)
       )
     );
   }
@@ -62,7 +55,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
   void _nextButtonPressed(BuildContext context) {
     setState(() {
       if (_isShowingAnswer) {
-        _item = _kanjiService?.getNextItem();
+        _item = _kanjiService!.getNextItem();
       }
 
       _isShowingAnswer = !_isShowingAnswer;
