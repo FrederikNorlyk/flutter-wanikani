@@ -60,7 +60,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
     );
   }
 
-  void _nextButtonPressed(BuildContext context) {
+  void _nextButtonPressed() {
     setState(() {
       if (_isShowingAnswer) {
         _item = _kanjiService!.getNextItem();

@@ -32,7 +32,7 @@ class QuestionWidget extends StatelessWidget {
         SizedBox(
           height: 150, 
           child: TextButton(
-            onPressed: () => _nextButtonPressed(context), 
+            onPressed: () => _nextButtonPressed(), 
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 40),
               backgroundColor: WaniKaniColors.pink.color,

@@ -23,7 +23,7 @@ class LevelSelectorButton extends StatelessWidget {
     List<Widget> children = [_buildButton(context, status)];
 
     if (status == Status.unseen) {
-      children.add(_buildUnseenStatus());
+      children.add(_buildUnseenStatusBadge());
     }
 
     return Stack(
@@ -55,7 +55,7 @@ class LevelSelectorButton extends StatelessWidget {
     );
   }
 
-  Widget _buildUnseenStatus() {
+  Widget _buildUnseenStatusBadge() {
     return Positioned(
       top: -4,
       right: -4,

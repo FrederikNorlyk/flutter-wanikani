@@ -108,6 +108,6 @@ class AnswerWidget extends StatelessWidget {
   void _buttonPressed(BuildContext context, Status status) {
     var state = Provider.of<MyAppState>(context, listen: false);
     state.setKanjiStatus(_currentLevel, _item, status);
-    _nextButtonPressed(context);
+    _nextButtonPressed();
   }
 }
