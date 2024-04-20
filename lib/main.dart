@@ -102,6 +102,10 @@ class MyAppState extends ChangeNotifier {
   }
 
   Status getLevelStatus(int levelNumber) {
+    if (_levels.isEmpty) {
+      return Status.unseen;
+    }
+    
     var level = _levels.firstWhere((level) => level.level == levelNumber);
     return level.status;
   }
