@@ -12,13 +12,28 @@ class Level {
   }
 
   Status get status {
-    if (_kanjiItems.any((item) => item.status == Status.unseen)) {
-      return Status.unseen;
+    var allAreUnseen = true;
+    var allAreBurnt = true;
+
+    for (var item in _kanjiItems) {
+      switch (item.status) {
+        case Status.seen:
+          return Status.seen;
+        case Status.burnt:
+          allAreUnseen = false;
+          break;
+        case Status.unseen:
+          allAreBurnt = false;
+      }
     }
-    if (_kanjiItems.any((item) => item.status == Status.seen)) {
+    
+    if (allAreBurnt) {
+      return Status.burnt;
+    } else if (allAreUnseen) {
+      return Status.unseen;
+    } else {
       return Status.seen;
     }
-    return Status.burnt;
   }
 
   List<KanjiItem> get kanjiItems {
