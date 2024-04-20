@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/main.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
 import 'package:flutter_wanikani/model/reading.dart';
-import 'package:flutter_wanikani/model/status.dart';
-import 'package:flutter_wanikani/model/wanikani_colors.dart';
+import 'package:flutter_wanikani/enum/status.dart';
+import 'package:flutter_wanikani/enum/wanikani_colors.dart';
 import 'package:provider/provider.dart';
 
 class AnswerWidget extends StatelessWidget {

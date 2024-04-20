@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/main.dart';
-import 'package:flutter_wanikani/model/wanikani_colors.dart';
+import 'package:flutter_wanikani/enum/wanikani_colors.dart';
 import 'package:flutter_wanikani/widgets/level_selector_button.dart';
 import 'package:provider/provider.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter_wanikani/model/kanji_item.dart';
-import 'package:flutter_wanikani/model/status.dart';
+import 'package:flutter_wanikani/enum/status.dart';
 
 class Level {
   final int _level;

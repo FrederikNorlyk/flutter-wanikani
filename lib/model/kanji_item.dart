@@ -1,4 +1,4 @@
-import 'package:flutter_wanikani/model/status.dart';
+import 'package:flutter_wanikani/enum/status.dart';
 import 'package:flutter_wanikani/model/reading.dart';
 
 class KanjiItem {

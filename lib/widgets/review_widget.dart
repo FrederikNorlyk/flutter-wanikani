@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanikani/main.dart';
 import 'package:flutter_wanikani/model/kanji_item.dart';
-import 'package:flutter_wanikani/model/status.dart';
+import 'package:flutter_wanikani/enum/status.dart';
 import 'package:flutter_wanikani/service/kanji_service.dart';
 import 'package:provider/provider.dart';
 
