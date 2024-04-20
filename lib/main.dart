@@ -119,4 +119,13 @@ class MyAppState extends ChangeNotifier {
 
     notifyListeners();
   }
+
+  void resetState() {
+    SharedPreferences.getInstance().then((preferences) => _clearState(preferences));
+  }
+
+  void _clearState(SharedPreferences preferences) {
+    preferences.clear();
+    notifyListeners();
+  }
 }

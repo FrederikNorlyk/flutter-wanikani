@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wanikani/main.dart';
+import 'package:flutter_wanikani/model/wanikani_colors.dart';
 import 'package:flutter_wanikani/widgets/level_selector_button.dart';
+import 'package:provider/provider.dart';
 
 class LevelSelectorWidget extends StatelessWidget {
 
@@ -42,7 +45,7 @@ class LevelSelectorWidget extends StatelessWidget {
       level += 10;
     }
 
-    widgets.add(_buildBottomSpacing());
+    widgets.add(_buildBottomSpacing(context));
 
     return widgets;
   }
@@ -72,12 +75,42 @@ class LevelSelectorWidget extends StatelessWidget {
     );
   }
 
-  SliverList _buildBottomSpacing() {
+  SliverList _buildBottomSpacing(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        childCount: 1,
-        (context, index) => const SizedBox(height: 40)
+        childCount: 3,
+        (context, index) => index == 1 
+          ? FilledButton(
+            onPressed: () => showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: const Text('Reset state'),
+                content: const Text('Are you sure?'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'Cancel'),
+                    child: const Text('Cancel'),
+                  ),
+                  TextButton(
+                    onPressed: () => _resetState(context),
+                    child: const Text('OK'),
+                  ),
+                ]
+              )
+            ),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(WaniKaniColors.red.color),
+            ),
+            child: const Text('Reset'),
+          ) 
+          : const SizedBox(height: 40)
       )
     );
+  }
+
+  void _resetState(BuildContext context) {
+    MyAppState state = Provider.of<MyAppState>(context, listen: false);
+    state.resetState();
+    Navigator.pop(context, 'OK');
   }
 }
