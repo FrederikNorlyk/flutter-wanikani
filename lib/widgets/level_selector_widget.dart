@@ -79,32 +79,38 @@ class LevelSelectorWidget extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         childCount: 3,
-        (context, index) => index == 1 
-          ? FilledButton(
-            onPressed: () => showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                title: const Text('Reset state'),
-                content: const Text('Are you sure?'),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(context, 'Cancel'),
-                    child: const Text('Cancel'),
-                  ),
-                  TextButton(
-                    onPressed: () => _resetState(context),
-                    child: const Text('OK'),
-                  ),
-                ]
-              )
-            ),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(WaniKaniColors.red.color),
-            ),
-            child: const Text('Reset'),
-          ) 
-          : const SizedBox(height: 40)
+        (context, index) => index == 1 ? _getResetButton(context) : const SizedBox(height: 40)
       )
+    );
+  }
+
+  FilledButton _getResetButton(BuildContext context) {
+    return FilledButton(
+      onPressed: () => showDialog(
+        context: context,
+        builder: (context) => _getDialog(context)
+      ),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(WaniKaniColors.red.color),
+      ),
+      child: const Text('Reset'),
+    );
+  }
+
+  AlertDialog _getDialog(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Reset state'),
+      content: const Text('Are you sure?'),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context, 'Cancel'),
+          child: const Text('Cancel'),
+        ),
+        TextButton(
+          onPressed: () => _resetState(context),
+          child: const Text('OK'),
+        ),
+      ]
     );
   }
 
